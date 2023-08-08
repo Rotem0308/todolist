@@ -14,7 +14,7 @@ app.use(express.static("public"));
 
 // Define the database URL to connect to.
 const mongoDB = "mongodb+srv://rotem0308:rotem0309@cluster0.xj0jlnn.mongodb.net/todoListDB";
-
+const PORT = process.env.PORT
 // Wait for database to connect, logging an error if there is a problem
 main().catch((err) => console.log(err));
 async function main() {
@@ -140,6 +140,6 @@ app.get("/about", function (req, res) {
   res.render("about");
 });
 
-app.listen(3000, function () {
+app.listen(PORT, function () {
   console.log("Server started on port 3000");
 });
